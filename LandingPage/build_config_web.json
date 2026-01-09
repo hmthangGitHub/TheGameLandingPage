@@ -1,0 +1,14 @@
+{
+    "platform": "web-mobile",
+    "outputName": "web-mobile",
+    "buildPath": "./build",
+    "startScene": "db://assets/Scene/scene.scene",
+    "scenes": [
+        { "url": "db://assets/Scene/scene.scene", "inBuild": true }
+    ],
+    "packages": {
+        "web-mobile": {
+            "webOrientation": "auto"
+        }
+    }
+}
