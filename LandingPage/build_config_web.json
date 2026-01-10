@@ -1,7 +1,7 @@
 {
     "platform": "web-mobile",
-    "outputName": "web-mobile",
-    "buildPath": "../build",
+    "outputName": "docs",
+    "buildPath": "E:/Workspace/TheGameLandingPage/",
     "startScene": "db://assets/Scene/scene.scene",
     "scenes": [
         { "url": "db://assets/Scene/scene.scene", "inBuild": true }
