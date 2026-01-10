@@ -1,4 +1,6 @@
-import { _decorator, Component, Node, assetManager, Label, SpriteFrame, instantiate, Sprite } from 'cc';
+import { _decorator, Component, Node, assetManager, Label, SpriteFrame, instantiate, Sprite, Button, PageView ,Animation} from 'cc';
+import { ScreenShot } from "db://assets/scripts/ScreenShot";
+import { ImageDetail } from './ImageDetail';
 const { ccclass, property } = _decorator;
 
 @ccclass('MetadataLoader')
@@ -21,23 +23,46 @@ export class MetadataLoader extends Component {
     @property(Label)
     public about: Label = null!;
 
-    @property(Node)
-    public screenShotTemplate: Node = null!;
+    @property(ScreenShot)
+    public screenShotTemplate: ScreenShot = null!;
 
     @property(Sprite)
     public icon: Sprite = null!;
 
+    @property(Button)
+    public iconButton: Button = null!;
+
+    @property(Animation)
+    public spriteDetailAnimation: Animation = null!;
+
+    @property(Button)
+    public backBtn: Button = null!;
+
+    @property(ImageDetail)
+    public imageDetailTemplate: ImageDetail = null!;
+
+    @property(PageView)
+    public pageView: PageView = null!;
+
     async start() {
+        this.loadingNode.active = true;
+        this.container.active = false;
+        this.screenShotTemplate.node.active = false;
+        this.imageDetailTemplate.node.active = false;
+
         let bundle = await this.loadBundle();
 
         await this.loadMetaData(bundle);
 
         this.loadingNode.active = false;
         this.container.active = true;
-        this.screenShotTemplate.active = false;
 
         this.loadImages(bundle);
         this.loadIcon(bundle);
+
+        this.backBtn.node.on('click', () => {
+            this.spriteDetailAnimation.play("detailOff");
+        });
     }
 
     private async loadImages(bundle) {
@@ -56,11 +81,14 @@ export class MetadataLoader extends Component {
         console.log(`Successfully loaded ${assets.length} icons!`);
 
         assets.forEach((spriteFrame, index) => {
-            let instance = instantiate(this.screenShotTemplate);
-            instance.children[0].getComponent(Sprite).spriteFrame = spriteFrame;
-            instance.active = true;
-            instance.parent = this.screenShotTemplate.parent;
-            console.log(`Loaded icon: ${spriteFrame.name}`);
+            let instance = instantiate(this.screenShotTemplate.node).getComponent(ScreenShot);
+            instance.sprite.spriteFrame = spriteFrame;
+            instance.node.active = true;
+            instance.node.parent = this.screenShotTemplate.node.parent;
+            instance.button.node.on('click', () => {
+
+                this.showImageDetail(assets, index);
+            });
         });
     }
 
@@ -93,7 +121,31 @@ export class MetadataLoader extends Component {
                 console.error('Failed to load icon:', err);
             } else {
                 this.icon.spriteFrame = spriteFrame;
+                this.iconButton.node.on('click', () => {
+                    this.showImageDetail([spriteFrame], 0);
+                });
             }
+        });
+    }
+
+    private showImageDetail(spriteFrames: SpriteFrame[], index: number) {
+        this.spriteDetailAnimation.play("detailShowing");
+        this.pageView.removeAllPages();
+
+        spriteFrames.forEach(spriteFrame => {
+            const clone = instantiate(this.imageDetailTemplate.node).getComponent(ImageDetail);
+            clone.node.parent = this.pageView.content;
+            clone.node.active = true;
+            clone.sprite.spriteFrame = spriteFrame;
+            this.pageView.addPage(clone.node);
+        });
+
+        this.pageView.node.active = false;
+        this.scheduleOnce(() => {
+            this.pageView.node.active = true;
+            this.scheduleOnce(() => {
+                this.pageView.scrollToPage(index, 0);
+            })
         });
     }
 }
