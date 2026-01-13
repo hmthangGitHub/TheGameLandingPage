@@ -1,3 +1,25 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
+import { getRemoteConfig, fetchAndActivate, getValue } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-remote-config.js";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCAIU_KLl1Zt3ZwiiaWM3AaM17cI0-EFik",
+    authDomain: "thegame-f06cf.firebaseapp.com",
+    projectId: "thegame-f06cf",
+    storageBucket: "thegame-f06cf.firebasestorage.app",
+    messagingSenderId: "817544093644",
+    appId: "1:817544093644:web:0030a1cc7a9537816d0769",
+    measurementId: "G-WDT5EXJJNY"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const remoteConfig = getRemoteConfig(app);
+remoteConfig.settings.minimumFetchIntervalMillis = 3600000; // 1 hour
+
 const iconModal = document.getElementById('iconModal');
 const screenshotModal = document.getElementById('screenshotModal');
 const thumbGallery = document.getElementById('thumbGallery');
@@ -6,7 +28,13 @@ const swipeContainer = document.getElementById('swipeContainer');
 // Load metadata and populate page
 async function loadMetadata() {
     try {
-        const version = "v1"
+        // Fetch and activate remote config
+        await fetchAndActivate(remoteConfig);
+        
+        // Get version from remote config
+        const versionValue = getValue(remoteConfig, 'landing_page_version');
+        console.log(versionValue.asNumber());
+        let version = `v${versionValue.asNumber() || 1}`;
         const response = await fetch(`assets/${version}/metadata.json`);
         const metadata = await response.json();
 
