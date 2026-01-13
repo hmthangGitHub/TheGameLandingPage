@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Last Z: Survival Shooter V1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="content-padding">
+        <div class="app-header">
+            <div class="app-icon-container" onclick="openIconPreview()">
+                <img id="mainIcon" src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=256&h=256&fit=crop"
+                    alt="App Icon">
+            </div>
+            <div class="app-title-container">
+                <h1 id="appTitle">Last Z: Survival Shooter V1</h1>
+                <p class="developer-name" id="developerName">Công ty cổ phần phát triển công nghệ số Hồng Hà V1</p>
+                <p class="in-app-tag">in-app purchases</p>
+            </div>
+        </div>
+
+        <div class="metrics-row">
+            <div class="metric-item">
+                <span class="metric-value">50 MB</span>
+                <span class="metric-label">Size</span>
+            </div>
+            <div class="divider"></div>
+            <div class="metric-item">
+                <span class="rating-border">3+</span>
+                <span class="metric-label">Rated for 3+</span>
+            </div>
+        </div>
+    </div>
+
+    <button class="install-btn">Install</button>
+
+    <div class="gallery" id="thumbGallery">
+        <!-- Images will be dynamically loaded here -->
+    </div>
+
+    <div class="content-padding">
+        <div class="section-header">
+            <h2>About this game</h2>
+            <div class="arrow-btn">❯</div>
+        </div>
+        <p class="game-desc" id="aboutText">
+            Join the survival challenge, conquer the apocalypse! Survive the zombie waves and upgrade your weapons in
+            this ultimate survival shooter V1.
+        </p>
+    </div>
+
+    <div id="iconModal" class="modal-overlay" onclick="closeAllModals()">
+        <span class="modal-close">&times;</span>
+        <div id="iconModalContent">
+            <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=800&fit=crop" alt="Icon Full">
+        </div>
+    </div>
+
+    <div id="screenshotModal" class="modal-overlay">
+        <span class="modal-close" onclick="closeAllModals()">&times;</span>
+        <div class="swipe-container" id="swipeContainer">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
