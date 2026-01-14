@@ -85,8 +85,15 @@ async function loadMetadata() {
                 }, 10);
             };
         }
+        
+        // Hide loading indicator and show content
+        document.getElementById('loadingIndicator').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
     } catch (error) {
         console.error('Error loading metadata:', error);
+        // Hide loading indicator even on error
+        document.getElementById('loadingIndicator').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
     }
 }
 

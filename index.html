@@ -10,6 +10,14 @@
 
 <body>
 
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-container">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Loading...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content" style="display: none;">
     <div class="content-padding">
         <div class="app-header">
             <div class="app-icon-container" onclick="openIconPreview()">
@@ -64,6 +72,7 @@
         <span class="modal-close" onclick="closeAllModals()">&times;</span>
         <div class="swipe-container" id="swipeContainer">
         </div>
+    </div>
     </div>
 
     <!-- Firebase SDK -->
