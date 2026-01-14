@@ -44,7 +44,11 @@
         </div>
     </div>
 
-    <button class="install-btn">Install</button>
+    <button class="install-btn" id="installButton">Install</button>
+    
+    <div id="emailConfirmation" class="email-confirmation" style="display: none;">
+        <p class="confirmation-text">You're on the list! We'll notify you at <span id="userEmailDisplay"></span>.</p>
+    </div>
 
     <div class="gallery" id="thumbGallery">
         <!-- Images will be dynamically loaded here -->
@@ -71,6 +75,36 @@
     <div id="screenshotModal" class="modal-overlay">
         <span class="modal-close" onclick="closeAllModals()">&times;</span>
         <div class="swipe-container" id="swipeContainer">
+        </div>
+    </div>
+
+    <!-- Install Popup Modal -->
+    <div id="installPopup" class="modal-overlay" style="display: none;">
+        <div class="install-popup-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeInstallPopup()">&times;</span>
+            <h2 class="popup-title">We're thrilled you want to join</h2>
+            <p class="popup-text">We are currently in the final stages of building the game</p>
+            <p class="popup-text">Because you're an early bird, leave your email to get Priority Access when we launch next month</p>
+            <form id="installPopupForm" class="popup-form">
+                <input type="email" id="emailInput" class="popup-input" placeholder="Enter your email" required>
+                <button type="submit" class="popup-submit-btn">Get Priority Access</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Badge Popup Modal -->
+    <div id="badgePopup" class="modal-overlay" style="display: none;">
+        <div class="badge-popup-content" onclick="event.stopPropagation()">
+            <div class="confirmation-badge">
+                <div class="checkmark-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="white"/>
+                    </svg>
+                </div>
+                <h2 class="badge-title">PRIORITY ACCESS GRANTED</h2>
+                <p class="badge-subtitle">Welcome, Early Survivor</p>
+                <p class="badge-email">We'll email at <span id="badgeEmailDisplay"></span> with beta code</p>
+            </div>
         </div>
     </div>
     </div>

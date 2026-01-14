@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
 import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
 import { getRemoteConfig, fetchAndActivate, getValue } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-remote-config.js";
+import { getDatabase, ref, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,6 +20,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const remoteConfig = getRemoteConfig(app);
 remoteConfig.settings.minimumFetchIntervalMillis = 3600000; // 1 hour
+const db = getDatabase(app);
 
 const iconModal = document.getElementById('iconModal');
 const screenshotModal = document.getElementById('screenshotModal');
@@ -114,7 +116,111 @@ function setupInstallButton() {
                     landing_page_version: currentVersion,
                 });
             }
+            // Show install popup
+            showInstallPopup();
         });
+    }
+    
+    // Handle form submission
+    const installPopupForm = document.getElementById('installPopupForm');
+    if (installPopupForm) {
+        installPopupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            console.log('Email submitted:', email);
+            
+            // Write to Realtime Database subscribers collection using email as ID
+            try {
+                // Sanitize email to use as key (replace invalid characters)
+                const emailKey = email.replace(/[.#$\[\]]/g, '_');
+                const subscriberRef = ref(db, `subscribers/${emailKey}`);
+                await set(subscriberRef, {
+                    email: email,
+                    landing_page_version: currentVersion || 'v1',
+                    timestamp: serverTimestamp(),
+                    createdAt: new Date().toISOString()
+                });
+                console.log('Subscriber added to Realtime Database');
+            } catch (error) {
+                console.error('Error adding subscriber to Realtime Database:', error);
+            }
+
+            // Close the install popup
+            closeInstallPopup();
+
+            // Show badge popup first
+            showBadgePopup(email);
+        });
+    }
+    
+    // Close popup when clicking overlay
+    const installPopup = document.getElementById('installPopup');
+    if (installPopup) {
+        installPopup.addEventListener('click', (e) => {
+            if (e.target === installPopup) {
+                closeInstallPopup();
+            }
+        });
+    }
+    
+    // Close badge popup when clicking anywhere (overlay or content)
+    const badgePopup = document.getElementById('badgePopup');
+    if (badgePopup) {
+        badgePopup.addEventListener('click', (e) => {
+            // Close when clicking anywhere on the badge popup
+            const badgeEmailDisplay = document.getElementById('badgeEmailDisplay');
+            const email = badgeEmailDisplay ? badgeEmailDisplay.textContent : '';
+            closeBadgePopup(email);
+        });
+    }
+}
+
+function showInstallPopup() {
+    const installPopup = document.getElementById('installPopup');
+    if (installPopup) {
+        installPopup.style.display = 'block';
+    }
+}
+
+function closeInstallPopup() {
+    const installPopup = document.getElementById('installPopup');
+    if (installPopup) {
+        installPopup.style.display = 'none';
+    }
+}
+
+function showBadgePopup(email) {
+    const badgePopup = document.getElementById('badgePopup');
+    const badgeEmailDisplay = document.getElementById('badgeEmailDisplay');
+    
+    if (badgePopup && badgeEmailDisplay) {
+        badgeEmailDisplay.textContent = email;
+        badgePopup.style.display = 'block';
+    }
+}
+
+function closeBadgePopup(email) {
+    const badgePopup = document.getElementById('badgePopup');
+    const badgeEmailDisplay = document.getElementById('badgeEmailDisplay');
+    
+    // Get email from badge display if not provided
+    if (!email && badgeEmailDisplay) {
+        email = badgeEmailDisplay.textContent;
+    }
+    
+    if (badgePopup) {
+        badgePopup.style.display = 'none';
+    }
+    
+    // Show confirmation message after badge closes
+    const installButton = document.getElementById('installButton');
+    const emailConfirmation = document.getElementById('emailConfirmation');
+    const userEmailDisplay = document.getElementById('userEmailDisplay');
+    
+    if (installButton && emailConfirmation && userEmailDisplay && email) {
+        installButton.style.display = 'none';
+        userEmailDisplay.textContent = email;
+        emailConfirmation.style.display = 'block';
     }
 }
 
@@ -138,6 +244,8 @@ function closeAllModals() {
 // Make functions globally accessible for inline onclick handlers
 window.openIconPreview = openIconPreview;
 window.closeAllModals = closeAllModals;
+window.closeInstallPopup = closeInstallPopup;
+window.closeBadgePopup = closeBadgePopup;
 
 // Close screenshot modal if clicking background (not image)
 swipeContainer.onclick = (e) => {

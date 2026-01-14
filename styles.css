@@ -172,6 +172,92 @@ body {
     cursor: pointer;
 }
 
+.email-confirmation {
+    width: calc(100% - 32px);
+    margin: 0 16px 32px 16px;
+    padding: 16px;
+    text-align: center;
+}
+
+.confirmation-text {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.confirmation-text span {
+    color: #a8c7fa;
+    font-weight: 500;
+}
+
+.confirmation-badge {
+    width: 100%;
+    background: linear-gradient(135deg, #4a148c 0%, #1a237e 50%, #0d47a1 100%);
+    border-radius: 24px;
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.confirmation-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(168, 199, 250, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.checkmark-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(168, 199, 250, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.badge-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.badge-subtitle {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.badge-email {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+.badge-email span {
+    color: #a8c7fa;
+    font-weight: 500;
+}
+
 /* Screenshot Gallery */
 .gallery {
     display: flex;
@@ -237,7 +323,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
 }
 
 .modal-close {
@@ -289,4 +376,94 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Install Popup Modal */
+#installPopup .modal-close {
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+}
+
+.install-popup-content {
+    position: relative;
+    background-color: #1a1a1a;
+    border-radius: 24px;
+    padding: 32px 24px;
+    margin: 20% auto 50px;
+    width: calc(100% - 32px);
+    max-width: 400px;
+}
+
+.popup-title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.popup-text {
+    color: #bdc1c6;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.popup-form {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.popup-input {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #202124;
+    border: 1px solid #3c4043;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+.popup-input::placeholder {
+    color: #9aa0a6;
+}
+
+.popup-input:focus {
+    border-color: #a8c7fa;
+}
+
+.popup-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #a8c7fa;
+    color: #003351;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.popup-submit-btn:hover {
+    background-color: #95b9f8;
+}
+
+/* Badge Popup Modal */
+.badge-popup-content {
+    position: relative;
+    margin: 20% auto 50px;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge-popup-content .confirmation-badge {
+    width: 100%;
+    max-width: 400px;
 }
