@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
+import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
 import { getRemoteConfig, fetchAndActivate, getValue } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-remote-config.js";
 
 // Your web app's Firebase configuration
@@ -25,6 +25,9 @@ const screenshotModal = document.getElementById('screenshotModal');
 const thumbGallery = document.getElementById('thumbGallery');
 const swipeContainer = document.getElementById('swipeContainer');
 
+// Store version for analytics
+let currentVersion = null;
+
 // Load metadata and populate page
 async function loadMetadata() {
     try {
@@ -35,6 +38,7 @@ async function loadMetadata() {
         const versionValue = getValue(remoteConfig, 'landing_page_version');
         console.log(versionValue.asNumber());
         let version = `v${versionValue.asNumber() || 1}`;
+        currentVersion = version; // Store version for analytics
         const response = await fetch(`assets/${version}/metadata.json`);
         const metadata = await response.json();
 
@@ -89,11 +93,28 @@ async function loadMetadata() {
         // Hide loading indicator and show content
         document.getElementById('loadingIndicator').style.display = 'none';
         document.getElementById('mainContent').style.display = 'block';
+        
+        // Set up install button event listener
+        setupInstallButton();
     } catch (error) {
         console.error('Error loading metadata:', error);
         // Hide loading indicator even on error
         document.getElementById('loadingIndicator').style.display = 'none';
         document.getElementById('mainContent').style.display = 'block';
+    }
+}
+
+// Install button click handler
+function setupInstallButton() {
+    const installBtn = document.querySelector('.install-btn');
+    if (installBtn) {
+        installBtn.addEventListener('click', () => {
+            if (currentVersion && analytics) {
+                logEvent(analytics, 'install', {
+                    landing_page_version: currentVersion,
+                });
+            }
+        });
     }
 }
 
@@ -113,6 +134,10 @@ function closeAllModals() {
     iconModal.style.display = 'none';
     screenshotModal.style.display = 'none';
 }
+
+// Make functions globally accessible for inline onclick handlers
+window.openIconPreview = openIconPreview;
+window.closeAllModals = closeAllModals;
 
 // Close screenshot modal if clicking background (not image)
 swipeContainer.onclick = (e) => {
