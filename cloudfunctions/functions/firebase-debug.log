@@ -1,0 +1,847 @@
+[debug] [2026-01-15T07:39:29.138Z] ----------------------------------------------------------------------
+[debug] [2026-01-15T07:39:29.140Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2026-01-15T07:39:29.140Z] CLI Version:   15.3.0
+[debug] [2026-01-15T07:39:29.140Z] Platform:      win32
+[debug] [2026-01-15T07:39:29.140Z] Node Version:  v25.3.0
+[debug] [2026-01-15T07:39:29.140Z] Time:          Thu Jan 15 2026 15:39:29 GMT+0800 (China Standard Time)
+[debug] [2026-01-15T07:39:29.140Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-15T07:39:29.838Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-15T07:39:29.838Z] > authorizing via signed-in user (hoangmanhthang795@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-01-15T07:39:29.849Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:39:29.849Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-01-15T07:39:29.852Z] Found emulator hub locator: {"version":"15.3.0","origins":["http://127.0.0.1:4400","http://[::1]:4400"],"pid":34760}
+[debug] [2026-01-15T07:39:29.852Z] Write emulator hub locator at C:\Users\LENOVO~1\AppData\Local\Temp\hub-thegame-f06cf.json
+[debug] [2026-01-15T07:39:29.860Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:39:29.860Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:39:29.860Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:39:29.860Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2026-01-15T07:39:29.873Z] defaultcredentials: writing to file C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json
+[debug] [2026-01-15T07:39:29.874Z] Setting GAC to C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\LENOVO LEGION\\AppData\\Roaming\\firebase\\hoangmanhthang795_gmail_com_application_default_credentials.json"}}
+[debug] [2026-01-15T07:39:29.875Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T07:39:29.875Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T07:39:29.876Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig [none]
+[debug] [2026-01-15T07:39:30.710Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig 200
+[debug] [2026-01-15T07:39:30.711Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig {"projectId":"thegame-f06cf","databaseURL":"https://thegame-f06cf-default-rtdb.firebaseio.com","storageBucket":"thegame-f06cf.firebasestorage.app"}
+[info] i  functions: Watching "E:\Workspace\LandingPage\cloudfunctions\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"E:\\Workspace\\LandingPage\\cloudfunctions\\functions\" for Cloud Functions..."}}
+[debug] [2026-01-15T07:39:30.734Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-01-15T07:39:31.363Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2026-01-15T07:39:31.363Z] Building nodejs source
+[debug] [2026-01-15T07:39:31.363Z] Failed to find version of module node: reached end of search path E:\Workspace\LandingPage\cloudfunctions\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[debug] [2026-01-15T07:39:31.366Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-15T07:39:31.372Z] Found firebase-functions binary at 'E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8597
+
+[error] TypeError: Cannot read properties of undefined (reading 'key')
+    at Object.<anonymous> (E:\Workspace\LandingPage\cloudfunctions\functions\lib\index.js:32:47)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Object..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at require (node:internal/modules/helpers:152:16)
+    at loadModule (E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\firebase-functions\lib\runtime\loader.js:40:16)
+
+[debug] [2026-01-15T07:39:31.687Z] Got response code 400; body Failed to generate manifest from function source: Cannot read properties of undefined (reading 'key')
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error"}}
+[debug] [2026-01-15T07:39:35.703Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-01-15T07:41:41.798Z] ----------------------------------------------------------------------
+[debug] [2026-01-15T07:41:41.800Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2026-01-15T07:41:41.800Z] CLI Version:   15.3.0
+[debug] [2026-01-15T07:41:41.800Z] Platform:      win32
+[debug] [2026-01-15T07:41:41.800Z] Node Version:  v25.3.0
+[debug] [2026-01-15T07:41:41.800Z] Time:          Thu Jan 15 2026 15:41:41 GMT+0800 (China Standard Time)
+[debug] [2026-01-15T07:41:41.800Z] ----------------------------------------------------------------------
+[debug] 
+[error] !!  functions: Failed to start Functions emulator: codebase source must be specified. Must specify either 'source' or 'remoteSource' in a functions config. {"metadata":{"emulator":{"name":"functions"},"message":"Failed to start Functions emulator: codebase source must be specified. Must specify either 'source' or 'remoteSource' in a functions config."}}
+[debug] [2026-01-15T07:41:42.375Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-15T07:41:42.375Z] > authorizing via signed-in user (hoangmanhthang795@gmail.com)
+[warn] !  Could not find config (firebase.json) so using defaults. 
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-01-15T07:41:42.381Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:41:42.381Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-01-15T07:41:42.384Z] Found emulator hub locator: {"version":"15.3.0","origins":["http://127.0.0.1:4400","http://[::1]:4400"],"pid":12068}
+[debug] [2026-01-15T07:41:42.384Z] Write emulator hub locator at C:\Users\LENOVO~1\AppData\Local\Temp\hub-thegame-f06cf.json
+[error] !!  functions: Failed to start Functions emulator: codebase source must be specified. Must specify either 'source' or 'remoteSource' in a functions config. {"metadata":{"emulator":{"name":"functions"},"message":"Failed to start Functions emulator: codebase source must be specified. Must specify either 'source' or 'remoteSource' in a functions config."}}
+[debug] [2026-01-15T07:41:42.409Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬──────────────────────────────────┬─────────────────────┐
+│ Emulator  │ Host:Port                        │ View in Emulator UI │
+├───────────┼──────────────────────────────────┼─────────────────────┤
+│ Functions │ Failed to initialize (see above) │                     │
+└───────────┴──────────────────────────────────┴─────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-01-15T07:43:51.971Z] ----------------------------------------------------------------------
+[debug] [2026-01-15T07:43:51.973Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2026-01-15T07:43:51.973Z] CLI Version:   15.3.0
+[debug] [2026-01-15T07:43:51.973Z] Platform:      win32
+[debug] [2026-01-15T07:43:51.973Z] Node Version:  v25.3.0
+[debug] [2026-01-15T07:43:51.973Z] Time:          Thu Jan 15 2026 15:43:51 GMT+0800 (China Standard Time)
+[debug] [2026-01-15T07:43:51.973Z] ----------------------------------------------------------------------
+[debug] 
+[error] !!  functions: Failed to start Functions emulator: codebase source must be specified. Must specify either 'source' or 'remoteSource' in a functions config. {"metadata":{"emulator":{"name":"functions"},"message":"Failed to start Functions emulator: codebase source must be specified. Must specify either 'source' or 'remoteSource' in a functions config."}}
+[debug] [2026-01-15T07:43:52.583Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-15T07:43:52.584Z] > authorizing via signed-in user (hoangmanhthang795@gmail.com)
+[warn] !  Could not find config (firebase.json) so using defaults. 
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-01-15T07:43:52.590Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:43:52.590Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-01-15T07:43:52.593Z] Found emulator hub locator: {"version":"15.3.0","origins":["http://127.0.0.1:4400","http://[::1]:4400"],"pid":26740}
+[debug] [2026-01-15T07:43:52.594Z] Write emulator hub locator at C:\Users\LENOVO~1\AppData\Local\Temp\hub-thegame-f06cf.json
+[error] !!  functions: Failed to start Functions emulator: codebase source must be specified. Must specify either 'source' or 'remoteSource' in a functions config. {"metadata":{"emulator":{"name":"functions"},"message":"Failed to start Functions emulator: codebase source must be specified. Must specify either 'source' or 'remoteSource' in a functions config."}}
+[debug] [2026-01-15T07:43:52.619Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬──────────────────────────────────┬─────────────────────┐
+│ Emulator  │ Host:Port                        │ View in Emulator UI │
+├───────────┼──────────────────────────────────┼─────────────────────┤
+│ Functions │ Failed to initialize (see above) │                     │
+└───────────┴──────────────────────────────────┴─────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-01-15T07:46:08.189Z] ----------------------------------------------------------------------
+[debug] [2026-01-15T07:46:08.191Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2026-01-15T07:46:08.191Z] CLI Version:   15.3.0
+[debug] [2026-01-15T07:46:08.191Z] Platform:      win32
+[debug] [2026-01-15T07:46:08.191Z] Node Version:  v25.3.0
+[debug] [2026-01-15T07:46:08.191Z] Time:          Thu Jan 15 2026 15:46:08 GMT+0800 (China Standard Time)
+[debug] [2026-01-15T07:46:08.191Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-15T07:46:08.885Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-15T07:46:08.885Z] > authorizing via signed-in user (hoangmanhthang795@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-01-15T07:46:08.892Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:46:08.892Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-01-15T07:46:08.896Z] Found emulator hub locator: {"version":"15.3.0","origins":["http://127.0.0.1:4400","http://[::1]:4400"],"pid":23624}
+[debug] [2026-01-15T07:46:08.896Z] Write emulator hub locator at C:\Users\LENOVO~1\AppData\Local\Temp\hub-thegame-f06cf.json
+[debug] [2026-01-15T07:46:08.907Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:46:08.907Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:46:08.907Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:46:08.907Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2026-01-15T07:46:08.919Z] defaultcredentials: writing to file C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json
+[debug] [2026-01-15T07:46:08.920Z] Setting GAC to C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\LENOVO LEGION\\AppData\\Roaming\\firebase\\hoangmanhthang795_gmail_com_application_default_credentials.json"}}
+[debug] [2026-01-15T07:46:08.920Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T07:46:08.920Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T07:46:08.921Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig [none]
+[debug] [2026-01-15T07:46:10.331Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig 200
+[debug] [2026-01-15T07:46:10.331Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig {"projectId":"thegame-f06cf","databaseURL":"https://thegame-f06cf-default-rtdb.firebaseio.com","storageBucket":"thegame-f06cf.firebasestorage.app"}
+[info] i  functions: Watching "E:\Workspace\LandingPage\cloudfunctions\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"E:\\Workspace\\LandingPage\\cloudfunctions\\functions\" for Cloud Functions..."}}
+[debug] [2026-01-15T07:46:10.348Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-01-15T07:46:10.996Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2026-01-15T07:46:10.996Z] Building nodejs source
+[debug] [2026-01-15T07:46:10.996Z] Failed to find version of module node: reached end of search path E:\Workspace\LandingPage\cloudfunctions\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[debug] [2026-01-15T07:46:10.998Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-15T07:46:11.004Z] Found firebase-functions binary at 'E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8617
+
+[error] TypeError: Cannot read properties of undefined (reading 'key')
+    at Object.<anonymous> (E:\Workspace\LandingPage\cloudfunctions\functions\lib\index.js:32:47)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Object..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at require (node:internal/modules/helpers:152:16)
+    at loadModule (E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\firebase-functions\lib\runtime\loader.js:40:16)
+
+[debug] [2026-01-15T07:46:11.324Z] Got response code 400; body Failed to generate manifest from function source: Cannot read properties of undefined (reading 'key')
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error"}}
+[debug] [2026-01-15T07:46:15.346Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-01-15T07:48:11.786Z] ----------------------------------------------------------------------
+[debug] [2026-01-15T07:48:11.787Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2026-01-15T07:48:11.788Z] CLI Version:   15.3.0
+[debug] [2026-01-15T07:48:11.788Z] Platform:      win32
+[debug] [2026-01-15T07:48:11.788Z] Node Version:  v25.3.0
+[debug] [2026-01-15T07:48:11.788Z] Time:          Thu Jan 15 2026 15:48:11 GMT+0800 (China Standard Time)
+[debug] [2026-01-15T07:48:11.788Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-15T07:48:12.502Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-15T07:48:12.502Z] > authorizing via signed-in user (hoangmanhthang795@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-01-15T07:48:12.513Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:48:12.514Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-01-15T07:48:12.517Z] Found emulator hub locator: {"version":"15.3.0","origins":["http://127.0.0.1:4400","http://[::1]:4400"],"pid":21100}
+[debug] [2026-01-15T07:48:12.517Z] Write emulator hub locator at C:\Users\LENOVO~1\AppData\Local\Temp\hub-thegame-f06cf.json
+[debug] [2026-01-15T07:48:12.525Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:48:12.526Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:48:12.526Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:48:12.526Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2026-01-15T07:48:12.536Z] defaultcredentials: writing to file C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json
+[debug] [2026-01-15T07:48:12.537Z] Setting GAC to C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\LENOVO LEGION\\AppData\\Roaming\\firebase\\hoangmanhthang795_gmail_com_application_default_credentials.json"}}
+[debug] [2026-01-15T07:48:12.538Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T07:48:12.538Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T07:48:12.539Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig [none]
+[debug] [2026-01-15T07:48:13.330Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig 200
+[debug] [2026-01-15T07:48:13.330Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig {"projectId":"thegame-f06cf","databaseURL":"https://thegame-f06cf-default-rtdb.firebaseio.com","storageBucket":"thegame-f06cf.firebasestorage.app"}
+[info] i  functions: Watching "E:\Workspace\LandingPage\cloudfunctions\functions\src" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src\" for Cloud Functions..."}}
+[debug] [2026-01-15T07:48:13.351Z] Customer code is not Node
+[debug] [2026-01-15T07:48:13.351Z] Customer code is not Python code.
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Could not detect runtime for functions at E:\Workspace\LandingPage\cloudfunctions\functions\src {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Could not detect runtime for functions at E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src"}}
+[debug] [2026-01-15T07:48:13.354Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-01-15T07:49:14.667Z] ----------------------------------------------------------------------
+[debug] [2026-01-15T07:49:14.668Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2026-01-15T07:49:14.668Z] CLI Version:   15.3.0
+[debug] [2026-01-15T07:49:14.668Z] Platform:      win32
+[debug] [2026-01-15T07:49:14.668Z] Node Version:  v25.3.0
+[debug] [2026-01-15T07:49:14.668Z] Time:          Thu Jan 15 2026 15:49:14 GMT+0800 (China Standard Time)
+[debug] [2026-01-15T07:49:14.669Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-15T07:49:15.343Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-15T07:49:15.343Z] > authorizing via signed-in user (hoangmanhthang795@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-01-15T07:49:15.354Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:49:15.354Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-01-15T07:49:15.357Z] Found emulator hub locator: {"version":"15.3.0","origins":["http://127.0.0.1:4400","http://[::1]:4400"],"pid":34444}
+[debug] [2026-01-15T07:49:15.357Z] Write emulator hub locator at C:\Users\LENOVO~1\AppData\Local\Temp\hub-thegame-f06cf.json
+[debug] [2026-01-15T07:49:15.365Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:49:15.365Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:49:15.365Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:49:15.365Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2026-01-15T07:49:15.376Z] defaultcredentials: writing to file C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json
+[debug] [2026-01-15T07:49:15.377Z] Setting GAC to C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\LENOVO LEGION\\AppData\\Roaming\\firebase\\hoangmanhthang795_gmail_com_application_default_credentials.json"}}
+[debug] [2026-01-15T07:49:15.378Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T07:49:15.378Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T07:49:15.378Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig [none]
+[debug] [2026-01-15T07:49:15.997Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig 200
+[debug] [2026-01-15T07:49:15.997Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig {"projectId":"thegame-f06cf","databaseURL":"https://thegame-f06cf-default-rtdb.firebaseio.com","storageBucket":"thegame-f06cf.firebasestorage.app"}
+[info] i  functions: Watching "E:\Workspace\LandingPage\cloudfunctions\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"E:\\Workspace\\LandingPage\\cloudfunctions\\functions\" for Cloud Functions..."}}
+[debug] [2026-01-15T07:49:16.015Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-01-15T07:49:16.637Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2026-01-15T07:49:16.637Z] Building nodejs source
+[debug] [2026-01-15T07:49:16.638Z] Failed to find version of module node: reached end of search path E:\Workspace\LandingPage\cloudfunctions\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[debug] [2026-01-15T07:49:16.640Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-15T07:49:16.646Z] Found firebase-functions binary at 'E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8805
+
+[error] TypeError: Cannot read properties of undefined (reading 'key')
+    at Object.<anonymous> (E:\Workspace\LandingPage\cloudfunctions\functions\lib\index.js:32:47)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Object..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at require (node:internal/modules/helpers:152:16)
+    at loadModule (E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\firebase-functions\lib\runtime\loader.js:40:16)
+
+[debug] [2026-01-15T07:49:16.968Z] Got response code 400; body Failed to generate manifest from function source: Cannot read properties of undefined (reading 'key')
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error"}}
+[debug] [2026-01-15T07:49:20.987Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-01-15T07:51:02.199Z] File E:\Workspace\LandingPage\cloudfunctions\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2026-01-15T07:51:03.205Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-01-15T07:51:03.903Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2026-01-15T07:51:03.903Z] Building nodejs source
+[debug] [2026-01-15T07:51:03.904Z] Failed to find version of module node: reached end of search path E:\Workspace\LandingPage\cloudfunctions\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[debug] [2026-01-15T07:51:03.905Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-15T07:51:03.916Z] Found firebase-functions binary at 'E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8395
+
+[error] TypeError: Cannot read properties of undefined (reading 'key')
+    at Object.<anonymous> (E:\Workspace\LandingPage\cloudfunctions\functions\lib\index.js:32:47)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Object..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at require (node:internal/modules/helpers:152:16)
+    at loadModule (E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\firebase-functions\lib\runtime\loader.js:40:16)
+
+[debug] [2026-01-15T07:51:04.243Z] Got response code 400; body Failed to generate manifest from function source: Cannot read properties of undefined (reading 'key')
+[debug] [2026-01-15T07:51:05.858Z] File E:\Workspace\LandingPage\cloudfunctions\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2026-01-15T07:51:06.865Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-01-15T07:51:07.503Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2026-01-15T07:51:07.503Z] Building nodejs source
+[debug] [2026-01-15T07:51:07.503Z] Failed to find version of module node: reached end of search path E:\Workspace\LandingPage\cloudfunctions\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[debug] [2026-01-15T07:51:07.504Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-15T07:51:07.515Z] Found firebase-functions binary at 'E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8006
+
+[error] TypeError: Cannot read properties of undefined (reading 'key')
+    at Object.<anonymous> (E:\Workspace\LandingPage\cloudfunctions\functions\lib\index.js:32:47)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Object..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at require (node:internal/modules/helpers:152:16)
+    at loadModule (E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\firebase-functions\lib\runtime\loader.js:40:16)
+
+[debug] [2026-01-15T07:51:07.856Z] Got response code 400; body Failed to generate manifest from function source: Cannot read properties of undefined (reading 'key')
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error"}}
+[debug] [2026-01-15T07:51:11.779Z] File E:\Workspace\LandingPage\cloudfunctions\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src\\index.ts changed, reloading triggers"}}
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error"}}
+[debug] [2026-01-15T07:51:12.433Z] File E:\Workspace\LandingPage\cloudfunctions\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2026-01-15T07:51:12.555Z] File E:\Workspace\LandingPage\cloudfunctions\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2026-01-15T07:51:13.564Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-01-15T07:51:14.197Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2026-01-15T07:51:14.198Z] Building nodejs source
+[debug] [2026-01-15T07:51:14.198Z] Failed to find version of module node: reached end of search path E:\Workspace\LandingPage\cloudfunctions\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[debug] [2026-01-15T07:51:14.199Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-15T07:51:14.205Z] Found firebase-functions binary at 'E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8295
+
+[error] TypeError: Cannot read properties of undefined (reading 'key')
+    at Object.<anonymous> (E:\Workspace\LandingPage\cloudfunctions\functions\lib\index.js:32:47)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Object..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at require (node:internal/modules/helpers:152:16)
+    at loadModule (E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\firebase-functions\lib\runtime\loader.js:40:16)
+
+[debug] [2026-01-15T07:51:14.536Z] Got response code 400; body Failed to generate manifest from function source: Cannot read properties of undefined (reading 'key')
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error"}}
+[debug] [2026-01-15T07:54:03.564Z] ----------------------------------------------------------------------
+[debug] [2026-01-15T07:54:03.566Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2026-01-15T07:54:03.566Z] CLI Version:   15.3.0
+[debug] [2026-01-15T07:54:03.566Z] Platform:      win32
+[debug] [2026-01-15T07:54:03.566Z] Node Version:  v25.3.0
+[debug] [2026-01-15T07:54:03.566Z] Time:          Thu Jan 15 2026 15:54:03 GMT+0800 (China Standard Time)
+[debug] [2026-01-15T07:54:03.566Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-15T07:54:04.353Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-15T07:54:04.353Z] > authorizing via signed-in user (hoangmanhthang795@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-01-15T07:54:04.365Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:54:04.365Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-01-15T07:54:04.368Z] Found emulator hub locator: {"version":"15.3.0","origins":["http://127.0.0.1:4400","http://[::1]:4400"],"pid":34124}
+[debug] [2026-01-15T07:54:04.369Z] Write emulator hub locator at C:\Users\LENOVO~1\AppData\Local\Temp\hub-thegame-f06cf.json
+[debug] [2026-01-15T07:54:04.377Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:54:04.378Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:54:04.378Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T07:54:04.378Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2026-01-15T07:54:04.389Z] defaultcredentials: writing to file C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json
+[debug] [2026-01-15T07:54:04.390Z] Setting GAC to C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\LENOVO LEGION\\AppData\\Roaming\\firebase\\hoangmanhthang795_gmail_com_application_default_credentials.json"}}
+[debug] [2026-01-15T07:54:04.391Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T07:54:04.391Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T07:54:04.392Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig [none]
+[debug] [2026-01-15T07:54:05.152Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig 200
+[debug] [2026-01-15T07:54:05.152Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig {"projectId":"thegame-f06cf","databaseURL":"https://thegame-f06cf-default-rtdb.firebaseio.com","storageBucket":"thegame-f06cf.firebasestorage.app"}
+[info] i  functions: Watching "E:\Workspace\LandingPage\cloudfunctions\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"E:\\Workspace\\LandingPage\\cloudfunctions\\functions\" for Cloud Functions..."}}
+[debug] [2026-01-15T07:54:05.182Z] Validating nodejs source
+[debug] [2026-01-15T07:54:05.802Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2026-01-15T07:54:05.802Z] Building nodejs source
+[debug] [2026-01-15T07:54:05.802Z] Failed to find version of module node: reached end of search path E:\Workspace\LandingPage\cloudfunctions\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2026-01-15T07:54:05.805Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-15T07:54:05.811Z] Found firebase-functions binary at 'E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8516
+
+[debug] [2026-01-15T07:54:08.835Z] Got response from /__/functions.yaml {"endpoints":{"onSubscriberCreated":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"eventTrigger":{"eventType":"google.firebase.database.ref.v1.created","eventFilters":{},"eventFilterPathPatterns":{"ref":"subscribers/{emailKey}","instance":"*"},"retry":false},"entryPoint":"onSubscriberCreated"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{},"params":[{"name":"BREVO_API_KEY","type":"string"}]}
+[info] +  functions: Loaded functions definitions from source: onSubscriberCreated. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: onSubscriberCreated."}}
+[info] i  functions[us-central1-onSubscriberCreated]: function ignored because the database emulator does not exist or is not running. {"metadata":{"emulator":{"name":"functions"},"message":"function ignored because the database emulator does not exist or is not running."}}
+[debug] [2026-01-15T07:54:12.861Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-01-15T07:57:46.834Z] File E:\Workspace\LandingPage\cloudfunctions\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2026-01-15T07:57:46.984Z] File E:\Workspace\LandingPage\cloudfunctions\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2026-01-15T07:57:47.985Z] Validating nodejs source
+[debug] [2026-01-15T07:57:48.736Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2026-01-15T07:57:48.736Z] Building nodejs source
+[debug] [2026-01-15T07:57:48.736Z] Failed to find version of module node: reached end of search path E:\Workspace\LandingPage\cloudfunctions\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2026-01-15T07:57:48.739Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-15T07:57:48.748Z] Found firebase-functions binary at 'E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8880
+
+[debug] [2026-01-15T07:57:49.025Z] Got response from /__/functions.yaml {"endpoints":{"onSubscriberCreated":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"eventTrigger":{"eventType":"google.firebase.database.ref.v1.created","eventFilters":{},"eventFilterPathPatterns":{"ref":"subscribers/{emailKey}","instance":"*"},"retry":false},"entryPoint":"onSubscriberCreated"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{},"params":[{"name":"BREVO_API_KEY","type":"string"}]}
+[info] +  functions: Loaded functions definitions from source: onSubscriberCreated. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: onSubscriberCreated."}}
+[debug] [2026-01-15T07:57:54.005Z] File E:\Workspace\LandingPage\cloudfunctions\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2026-01-15T07:57:54.168Z] File E:\Workspace\LandingPage\cloudfunctions\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File E:\\Workspace\\LandingPage\\cloudfunctions\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2026-01-15T07:57:55.181Z] Validating nodejs source
+[debug] [2026-01-15T07:57:55.913Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2026-01-15T07:57:55.913Z] Building nodejs source
+[debug] [2026-01-15T07:57:55.913Z] Failed to find version of module node: reached end of search path E:\Workspace\LandingPage\cloudfunctions\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2026-01-15T07:57:55.915Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-15T07:57:55.925Z] Found firebase-functions binary at 'E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8092
+
+[debug] [2026-01-15T07:57:56.169Z] Got response from /__/functions.yaml {"endpoints":{"onSubscriberCreated":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"eventTrigger":{"eventType":"google.firebase.database.ref.v1.created","eventFilters":{},"eventFilterPathPatterns":{"ref":"subscribers/{emailKey}","instance":"*"},"retry":false},"entryPoint":"onSubscriberCreated"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{},"params":[{"name":"BREVO_API_KEY","type":"string"}]}
+[info] +  functions: Loaded functions definitions from source: onSubscriberCreated. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: onSubscriberCreated."}}
+[debug] [2026-01-15T08:03:38.137Z] ----------------------------------------------------------------------
+[debug] [2026-01-15T08:03:38.138Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions,database
+[debug] [2026-01-15T08:03:38.139Z] CLI Version:   15.3.0
+[debug] [2026-01-15T08:03:38.139Z] Platform:      win32
+[debug] [2026-01-15T08:03:38.139Z] Node Version:  v25.3.0
+[debug] [2026-01-15T08:03:38.139Z] Time:          Thu Jan 15 2026 16:03:38 GMT+0800 (China Standard Time)
+[debug] [2026-01-15T08:03:38.139Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-15T08:03:38.841Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-15T08:03:38.841Z] > authorizing via signed-in user (hoangmanhthang795@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[warn] !  database: Not starting the database emulator, make sure you have run firebase init. {"metadata":{"emulator":{"name":"database"},"message":"Not starting the \u001b[1mdatabase\u001b[22m emulator, make sure you have run \u001b[1mfirebase init\u001b[22m."}}
+[debug] [2026-01-15T08:03:38.847Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T08:03:38.847Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-01-15T08:03:38.850Z] Found emulator hub locator: {"version":"15.3.0","origins":["http://127.0.0.1:4400","http://[::1]:4400"],"pid":30944}
+[debug] [2026-01-15T08:03:38.850Z] Write emulator hub locator at C:\Users\LENOVO~1\AppData\Local\Temp\hub-thegame-f06cf.json
+[debug] [2026-01-15T08:03:38.858Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T08:03:38.858Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T08:03:38.858Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-01-15T08:03:38.858Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2026-01-15T08:03:38.868Z] defaultcredentials: writing to file C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json
+[debug] [2026-01-15T08:03:38.869Z] Setting GAC to C:\Users\LENOVO LEGION\AppData\Roaming\firebase\hoangmanhthang795_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\LENOVO LEGION\\AppData\\Roaming\\firebase\\hoangmanhthang795_gmail_com_application_default_credentials.json"}}
+[debug] [2026-01-15T08:03:38.871Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T08:03:38.871Z] Checked if tokens are valid: true, expires at: 1768465456627
+[debug] [2026-01-15T08:03:38.872Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig [none]
+[debug] [2026-01-15T08:03:39.874Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig 200
+[debug] [2026-01-15T08:03:39.874Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/thegame-f06cf/adminSdkConfig {"projectId":"thegame-f06cf","databaseURL":"https://thegame-f06cf-default-rtdb.firebaseio.com","storageBucket":"thegame-f06cf.firebasestorage.app"}
+[info] i  functions: Watching "E:\Workspace\LandingPage\cloudfunctions\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"E:\\Workspace\\LandingPage\\cloudfunctions\\functions\" for Cloud Functions..."}}
+[debug] [2026-01-15T08:03:39.895Z] Validating nodejs source
+[debug] [2026-01-15T08:03:40.503Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,database",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2026-01-15T08:03:40.503Z] Building nodejs source
+[debug] [2026-01-15T08:03:40.503Z] Failed to find version of module node: reached end of search path E:\Workspace\LandingPage\cloudfunctions\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2026-01-15T08:03:40.506Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-15T08:03:40.514Z] Found firebase-functions binary at 'E:\Workspace\LandingPage\cloudfunctions\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8873
+
+[debug] [2026-01-15T08:03:40.730Z] Got response from /__/functions.yaml {"endpoints":{"onSubscriberCreated":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"eventTrigger":{"eventType":"google.firebase.database.ref.v1.created","eventFilters":{},"eventFilterPathPatterns":{"ref":"subscribers/{emailKey}","instance":"*"},"retry":false},"entryPoint":"onSubscriberCreated"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{},"params":[{"name":"BREVO_API_KEY","type":"string"}]}
+[info] +  functions: Loaded functions definitions from source: onSubscriberCreated. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: onSubscriberCreated."}}
+[info] i  functions[us-central1-onSubscriberCreated]: function ignored because the database emulator does not exist or is not running. {"metadata":{"emulator":{"name":"functions"},"message":"function ignored because the database emulator does not exist or is not running."}}
+[debug] [2026-01-15T08:03:44.773Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 

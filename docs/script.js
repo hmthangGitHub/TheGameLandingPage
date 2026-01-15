@@ -35,7 +35,7 @@ async function loadMetadata() {
     try {
         // Fetch and activate remote config
         await fetchAndActivate(remoteConfig);
-        
+
         // Get version from remote config
         const versionValue = getValue(remoteConfig, 'landing_page_version');
         console.log(versionValue.asNumber());
@@ -91,11 +91,11 @@ async function loadMetadata() {
                 }, 10);
             };
         }
-        
+
         // Hide loading indicator and show content
         document.getElementById('loadingIndicator').style.display = 'none';
         document.getElementById('mainContent').style.display = 'block';
-        
+
         // Set up install button event listener
         setupInstallButton();
     } catch (error) {
@@ -120,7 +120,7 @@ function setupInstallButton() {
             showInstallPopup();
         });
     }
-    
+
     // Handle form submission
     const installPopupForm = document.getElementById('installPopupForm');
     if (installPopupForm) {
@@ -128,7 +128,7 @@ function setupInstallButton() {
             e.preventDefault();
             const email = document.getElementById('emailInput').value;
             console.log('Email submitted:', email);
-            
+
             // Write to Realtime Database subscribers collection using email as ID
             try {
                 // Sanitize email to use as key (replace invalid characters)
@@ -141,8 +141,17 @@ function setupInstallButton() {
                     createdAt: new Date().toISOString()
                 });
                 console.log('Subscriber added to Realtime Database');
+                // The Cloud Function triggered by this write will handle sending the beautiful email
+
+
             } catch (error) {
                 console.error('Error adding subscriber to Realtime Database:', error);
+            }
+
+            if (currentVersion && analytics) {
+                logEvent(analytics, 'submit_email', {
+                    landing_page_version: currentVersion,
+                });
             }
 
             // Close the install popup
@@ -152,7 +161,7 @@ function setupInstallButton() {
             showBadgePopup(email);
         });
     }
-    
+
     // Close popup when clicking overlay
     const installPopup = document.getElementById('installPopup');
     if (installPopup) {
@@ -162,7 +171,7 @@ function setupInstallButton() {
             }
         });
     }
-    
+
     // Close badge popup when clicking anywhere (overlay or content)
     const badgePopup = document.getElementById('badgePopup');
     if (badgePopup) {
@@ -192,7 +201,7 @@ function closeInstallPopup() {
 function showBadgePopup(email) {
     const badgePopup = document.getElementById('badgePopup');
     const badgeEmailDisplay = document.getElementById('badgeEmailDisplay');
-    
+
     if (badgePopup && badgeEmailDisplay) {
         badgeEmailDisplay.textContent = email;
         badgePopup.style.display = 'block';
@@ -202,21 +211,21 @@ function showBadgePopup(email) {
 function closeBadgePopup(email) {
     const badgePopup = document.getElementById('badgePopup');
     const badgeEmailDisplay = document.getElementById('badgeEmailDisplay');
-    
+
     // Get email from badge display if not provided
     if (!email && badgeEmailDisplay) {
         email = badgeEmailDisplay.textContent;
     }
-    
+
     if (badgePopup) {
         badgePopup.style.display = 'none';
     }
-    
+
     // Show confirmation message after badge closes
     const installButton = document.getElementById('installButton');
     const emailConfirmation = document.getElementById('emailConfirmation');
     const userEmailDisplay = document.getElementById('userEmailDisplay');
-    
+
     if (installButton && emailConfirmation && userEmailDisplay && email) {
         installButton.style.display = 'none';
         userEmailDisplay.textContent = email;
