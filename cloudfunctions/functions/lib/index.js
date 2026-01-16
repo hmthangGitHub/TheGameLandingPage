@@ -35,7 +35,9 @@ const BREVO_API_URL = "https://api.brevo.com/v3/smtp/email";
 /**
  * Cloud Function triggered when a new subscriber is added to Realtime Database
  */
-exports.onSubscriberCreated = (0, database_1.onValueCreated)("/subscribers/{emailKey}", async (event) => {
+exports.onSubscriberCreated = (0, database_1.onValueCreated)("/subscribers/{emailKey}", 
+// eslint-disable-next-line max-len
+async (event) => {
     const subscriberData = event.data.val();
     const emailKey = event.params.emailKey;
     console.log("New subscriber added:", emailKey);
@@ -60,7 +62,8 @@ exports.onSubscriberCreated = (0, database_1.onValueCreated)("/subscribers/{emai
           <html lang="en">
           <head>
             <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="viewport"
+                  content="width=device-width, initial-scale=1.0">
             <title>Priority Access Granted</title>
             <style>
               @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
@@ -72,7 +75,8 @@ exports.onSubscriberCreated = (0, database_1.onValueCreated)("/subscribers/{emai
               }
               
               body {
-                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont,
+                           'Segoe UI', Roboto, sans-serif;
                 background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
                 padding: 20px;
                 line-height: 1.6;
@@ -102,7 +106,8 @@ exports.onSubscriberCreated = (0, database_1.onValueCreated)("/subscribers/{emai
                 left: -50%;
                 width: 200%;
                 height: 200%;
-                background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+                background: radial-gradient(circle, rgba(255,255,255,0.1) 0%,
+                                           transparent 70%);
                 animation: pulse 3s ease-in-out infinite;
               }
               
@@ -309,16 +314,20 @@ exports.onSubscriberCreated = (0, database_1.onValueCreated)("/subscribers/{emai
                 
                 <p class="text">
                   The apocalypse is coming, and you're <strong>first in line</strong>.
+                
                 </p>
                 
                 <p class="text">
-                  We're thrilled to have you join us on this journey. Thank you for believing in Last Z: Survival and being part of our early community!
+                  We're thrilled to have you join us on this journey. Thank you for
+                  believing in Last Z: Survival and being part of our early community!
+                  believing in Last Z: Survival and being part of our early community!
                 </p>
                 
                 <div class="highlight-box">
                   <p>
                     <strong>🗓️ What's Next?</strong><br/>
-                    We're in the final stages of development. Because you signed up early, 
+                    We're in the final stages of development. Because you signed up early,
+                    you'll receive <strong>Priority Access</strong> when the beta goes live next month.
                     you'll receive <strong>Priority Access</strong> when the beta goes live next month.
                   </p>
                 </div>
@@ -327,13 +336,15 @@ exports.onSubscriberCreated = (0, database_1.onValueCreated)("/subscribers/{emai
                   <div class="feature-item">
                     <div class="feature-icon">🎮</div>
                     <div class="feature-text">
-                      <strong>Early Beta Access</strong> - Play before anyone else
+                      <strong>Early Beta Access</strong> - Play before
+                      anyone else
                     </div>
                   </div>
                   <div class="feature-item">
                     <div class="feature-icon">🔑</div>
                     <div class="feature-text">
-                      <strong>Exclusive Beta Code</strong> - Reserved just for you
+                      <strong>Exclusive Beta Code</strong> - Reserved just
+                      for you
                     </div>
                   </div>
                   <div class="feature-item">
@@ -345,7 +356,8 @@ exports.onSubscriberCreated = (0, database_1.onValueCreated)("/subscribers/{emai
                 </div>
                 
                 <p class="text" style="margin-top: 30px;">
-                  We'll notify you at <span class="email-highlight">${email}</span> 
+                  We'll notify you at <span class="email-highlight">${email}</span>
+                  the moment the beta goes live with your exclusive access code.
                   the moment the beta goes live with your exclusive access code.
                 </p>
                 
@@ -357,7 +369,8 @@ exports.onSubscriberCreated = (0, database_1.onValueCreated)("/subscribers/{emai
               
               <!-- Footer -->
               <div class="footer">
-                <div class="footer-logo">Last Z: Survival Shooter</div>
+                <div class="footer-logo">Last Z: Survival
+                Shooter</div>
                 <p>© 2026 Panda B Production. All rights reserved.</p>
                 <p style="margin-top: 15px; color: #525252;">
                   You're receiving this because you signed up for early access.<br/>
