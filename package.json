@@ -1,0 +1,16 @@
+{
+  "name": "ai-agent",
+  "version": "1.0.0",
+  "description": "A standalone AI agent with research, code search, and multi-step task execution skills",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "langchain": "^0.2.0",
+    "@langchain/openai": "^0.1.0",
+    "@langchain/community": "^0.2.0",
+    "zod": "^3.22.0",
+    "node-fetch": "^3.3.0"
+  }
+}

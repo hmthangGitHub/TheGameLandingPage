@@ -1,0 +1,6 @@
+{
+  "skill_id": "fullstack-developer",
+  "triggers": ["refactor", "type-safe", "async-await", "frontend", "backend", "strict-mode"],
+  "runtime": "typescript-javascript",
+  "entrypoint": "index.ts"
+}
